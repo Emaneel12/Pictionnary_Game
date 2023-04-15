@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   // This widget is the root of your application.
   @override
@@ -20,14 +20,7 @@ class MyApp extends StatelessWidget {
           seedColor: Color.fromARGB(255, 113, 194, 226),
         ),
       ),
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: bgGradientColor,
-          ),
-          child: MainRoomChoice(),
-        ),
-      ),
+      home: MainRoomChoice(),
     );
   }
 }

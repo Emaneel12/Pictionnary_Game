@@ -15,16 +15,19 @@ const bgGradientColor = LinearGradient(
   ],
 );
 
-//AppBackground our widget color
+// AppBackground our widget color
 class AppBackgroundColor extends StatelessWidget {
-  const AppBackgroundColor({super.key});
+  const AppBackgroundColor({Key? key, required this.child}) : super(key: key);
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: bgGradientColor,
       ),
+      child: child,
     );
   }
 }
