@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'utils/color.dart';
+import 'package:my_pictionary/screens/create_room_screen.dart';
+import 'package:my_pictionary/screens/join_room_screen.dart';
 import 'screens/main_room_choice.dart';
 
 void main() {
@@ -7,7 +8,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+  });
 
   // This widget is the root of your application.
   @override
@@ -17,19 +20,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 113, 194, 226),
+          seedColor: const Color.fromARGB(255, 59, 141, 141),
         ),
       ),
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: bgGradientColor,
-          ),
-          child: Stack(children: [
-            MainRoomChoice(),
-          ]),
-        ),
-      ),
+      //route to other pages(widgets)
+      routes: {
+        MainRoomChoice.routeName: (context) => const MainRoomChoice(),
+        JoinRoomScreen.routeName: (context) => const JoinRoomScreen(),
+        CreateRoomScreen.routeName: (context) => const CreateRoomScreen(),
+      },
+      initialRoute: MainRoomChoice.routeName,
     );
   }
 }
