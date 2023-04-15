@@ -13,23 +13,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'my_pictionary',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 113, 194, 226),
-        ),
-      ),
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: bgGradientColor,
+        title: 'my_pictionary',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Color.fromARGB(255, 113, 194, 226),
           ),
-          child: Stack(children: [
-            MainRoomChoice(),
-          ]),
         ),
-      ),
-    );
+        home: Scaffold(
+          body: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: bgGradientColor,
+                  ),
+                ),
+              ),
+              MainRoomChoice(),
+            ],
+          ),
+        ));
   }
 }
