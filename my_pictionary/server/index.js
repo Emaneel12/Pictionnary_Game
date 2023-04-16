@@ -8,6 +8,7 @@ const server = http.createServer(app); // creating a server
 const socket = require("socket.io");
 const io = socket(server);
 
+
 const mongoose = require('mongoose');
 //initialising express 
 
@@ -15,7 +16,7 @@ const mongoose = require('mongoose');
 // const port = process.env.PORT || 3000; //either running on the pport the deployant site gives or we run on 300 by default
 //listning to the server 
 //port , ip adress , callback function 
-server.listen(1337, () => { console.log(`server has started and running on port ${port}`); });
+server.listen(1337, () => { console.log(`server has started and running on port 1337`); });
 
 
 
@@ -31,11 +32,14 @@ const db = "mongodb+srv://iguerdnouhaila:Db0Ce4z3ql0wVzQ7@cluster0.c6rabse.mongo
 
 //socket.io connection : 
 io.on("connection", (socket) => {
-    console.log("connected!");
+    console.log("connected! io");
     // Listen for the custom event emitted by the client
     socket.on("createRoom", async({ login }) => {
         console.log(login);
     });
+    //creating a room 
+
+
 });
 //listening to what the client is sending 
 
