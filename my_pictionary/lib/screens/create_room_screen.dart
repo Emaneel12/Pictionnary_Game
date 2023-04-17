@@ -64,8 +64,14 @@ class _CreateRoomState extends State<CreateRoomScreen> {
                     height: size.height * 0.06,
                   ),
                   CustomButton(
+
+                      onClick: () => _socketMethods.createRoom(
+                            _nameController.text,
+                          ),
+
                       onClick: () =>
                           _socketMethods.createRoom(_nameController.text),
+
                       text: 'Create'),
                 ]),
           ),
