@@ -1,52 +1,48 @@
-//importing modules
-
 const express = require('express');
-
-const http = require('http'); //importes http from 'http.dart' 
-const app = express(); // for builiding apps faster 
-const server = http.createServer(app); // creating a server
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
 const socket = require("socket.io");
+const cors = require("cors");
 const io = socket(server);
-
-
 const mongoose = require('mongoose');
-//initialising express 
 
+app.use(cors());
+app.use(express.json());
 
-// const port = process.env.PORT || 3000; //either running on the pport the deployant site gives or we run on 300 by default
-//listning to the server 
-//port , ip adress , callback function 
-server.listen(1337, () => { console.log(`server has started and running on port 1337`); });
+// Create a SocketMethods class to manage socket.io logic
+class SocketMethods {
+    constructor(io) {
+        this.io = io;
+    }
 
+    createRoom(login) {
+        console.log("hoib");
+        console.log(login);
+        // Implement your create room logic here
+    }
+}
 
+// Create a new instance of SocketMethods with the io instance
+const socketMethods = new SocketMethods(io);
 
-
-
-//middle ware changes the data sent from client to server 
-app.use(express.json()); //converts incomming data to Json 
-
-//creating a databse variable 
-const db = "mongodb+srv://iguerdnouhaila:Db0Ce4z3ql0wVzQ7@cluster0.c6rabse.mongodb.net/?retryWrites=true&w=majority";
-
-
-
-//socket.io connection : 
+// Socket.io connection
 io.on("connection", (socket) => {
     console.log("connected! io");
     // Listen for the custom event emitted by the client
     socket.on("createRoom", async({ login }) => {
-        console.log(login);
+        socket.on("createRoom", async({ login }) => {
+            console.log("hoib");
+            console.log(login);
+
+            // Calling the createRoom method on the socketMethods instance with the provided data
+            socketMethods.createRoom(login);
+        });
     });
-    //creating a room 
-
-
 });
-//listening to what the client is sending 
 
+const db = "mongodb+srv://iguerdnouhaila:Db0Ce4z3ql0wVzQ7@cluster0.c6rabse.mongodb.net/?retryWrites=true&w=majority";
 
-
-
-//promise:
 mongoose.connect(db)
     .then(() => {
         console.log("connection to database is successful");
@@ -54,4 +50,7 @@ mongoose.connect(db)
     .catch((e) => {
         console.error("Failed to connect to database:", e);
     });
-//passing the link of our database and connecting to it
+
+server.listen(1337, () => {
+    console.log(`server has started and running on port 1337`);
+});

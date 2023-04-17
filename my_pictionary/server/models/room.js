@@ -15,6 +15,13 @@ const roomSchema = new mongoose.Schema({
     },
     currentRound: {
         required: true,
+        type: Number,
+        default: 1,
+    },
+    //players list 
+    players: [{
+        player: {
 
-    }
+        }
+    }]
 });
