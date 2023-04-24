@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:painter/painter.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyHomePage());
 
 class MyApp extends StatelessWidget {
   @override
