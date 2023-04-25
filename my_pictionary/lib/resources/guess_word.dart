@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_pictionary/utils/score.dart';
+import 'package:my_pictionary/resources/score.dart';
 import 'package:provider/provider.dart';
 
 class GuessWord with ChangeNotifier {
