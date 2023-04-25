@@ -16,13 +16,18 @@ class GuessUserScreen extends StatefulWidget {
 
 class _GuessUserScreenState extends State<GuessUserScreen> {
   final TextEditingController _guessController = TextEditingController();
+  bool _isCorrect = false;
 
   void _submitGuessWord(BuildContext context) {
     final guessWord = Provider.of<GuessWord>(context, listen: false);
-    final String drawingWord = RandomWord.generate();
-    final String guessedWord = _guessController.text;
-    guessWord.submitGuessWord(context, guessedWord, drawingWord);
-    _guessController.clear();
+    // final String drawingWord = RandomWord.generate();
+    // final String guessedWord = _guessController.text;
+    // if (guessWord.submitGuessWord(context, guessedWord, drawingWord)) {
+    //   setState(() {
+    //     _isCorrect = true;
+    //   });
+    // }
+    // _guessController.clear();
   }
 
   @override
@@ -34,6 +39,14 @@ class _GuessUserScreenState extends State<GuessUserScreen> {
             children: [
               Expanded(
                 child: Container(), // widget to show stream result
+              ),
+              Expanded(
+                child: _isCorrect
+                    ? const Text(
+                        'Correct Answer!',
+                        style: TextStyle(fontSize: 24),
+                      )
+                    : Container(), // widget to show stream result
               ),
               SizedBox(
                 height: 150,

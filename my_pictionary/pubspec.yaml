@@ -38,6 +38,9 @@ dependencies:
   socket_io_client: ^2.0.1
   socket_io: ^0.9.0+2
   provider: ^6.0.1
+  sketcher: ^1.0.0
+  english_words: ^4.0.0
+  painter: ^2.0.0
 
 dev_dependencies:
   flutter_test:
