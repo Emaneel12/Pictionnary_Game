@@ -19,7 +19,7 @@ class _GuessUserScreenState extends State<GuessUserScreen> {
   bool _isCorrect = false;
 
   void _submitGuessWord(BuildContext context) {
-    final guessWord = Provider.of<GuessWord>(context, listen: false);
+    final guessWord = Provider.of<CompaireWord>(context, listen: false);
     // final String drawingWord = RandomWord.generate();
     // final String guessedWord = _guessController.text;
     // if (guessWord.submitGuessWord(context, guessedWord, drawingWord)) {
