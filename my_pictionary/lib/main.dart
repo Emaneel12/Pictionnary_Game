@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/screens/create_room_screen.dart';
+import 'package:my_pictionary/screens/game_screen.dart';
 import 'package:my_pictionary/screens/join_room_screen.dart';
 import 'screens/main_room_choice.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         MainRoomChoice.routeName: (context) => const MainRoomChoice(),
         JoinRoomScreen.routeName: (context) => const JoinRoomScreen(),
         CreateRoomScreen.routeName: (context) => const CreateRoomScreen(),
+        GameScreen.routeName: (context) => const GameScreen(),
       },
       initialRoute: MainRoomChoice.routeName,
     );

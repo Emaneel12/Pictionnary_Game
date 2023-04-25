@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
 });
 
 
-const db = "mongodb+srv://iguerdnouhaila:Db0Ce4z3ql0wVzQ7@cluster0.c6rabse.mongodb.net/?retryWrites=true&w=majority";
+const db = "mongodb+srv://iguerdnouhaila:xoN7OaFVZRklu5bK.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(db)
     .then(() => {

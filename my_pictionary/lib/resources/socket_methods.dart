@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:my_pictionary/screens/game_screen.dart';
+
 import 'socket_client.dart';
 
 class SocketMethods {
@@ -11,5 +14,13 @@ class SocketMethods {
         'login': login,
       });
     }
+  }
+
+  // creating a listener
+  void createRoomSuccessListener(BuildContext context) {
+    _socketClient.on('createRoomSuccess', (room) {
+      print(room);
+      Navigator.pushNamed(context, GameScreen.routeName);
+    });
   }
 }

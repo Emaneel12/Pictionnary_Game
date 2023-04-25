@@ -20,6 +20,13 @@ class _CreateRoomState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
   //
   final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.createRoomSuccessListener(context); //listing to evrything
+  }
+
   //preventing memory leaks and releasing any resources held by _nameController
   @override
   void dispose() {
@@ -64,11 +71,9 @@ class _CreateRoomState extends State<CreateRoomScreen> {
                     height: size.height * 0.06,
                   ),
                   CustomButton(
-
                       onClick: () => _socketMethods.createRoom(
                             _nameController.text,
                           ),
-
                       text: 'Create'),
                 ]),
           ),
