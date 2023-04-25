@@ -7,7 +7,7 @@ import 'package:my_pictionary/widgets/costum_button.dart';
 
 class MainChoice extends StatelessWidget {
   static String routeName = './main-choice';
-  const MainChoice({super.key});
+  const MainChoice(BuildContext context, {super.key});
 
   drawUser(BuildContext context) {
     Navigator.pushNamed(context, DrawUserScreen.routeName);
@@ -26,8 +26,8 @@ class MainChoice extends StatelessWidget {
           const Text(
             'Welcome to pictionary',
             style: TextStyle(
-              fontSize: 24, // Update font size as desired
-              fontWeight: FontWeight.bold, // Update font weight as desired
+              fontSize: 24, // font size as desired
+              fontWeight: FontWeight.bold,
               color: Colors.black,
               height: 3,
             ),

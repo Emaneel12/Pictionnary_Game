@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
       ),
       //route to other pages(widgets)
       routes: {
-        MainChoice.routeName: (context) => const MainChoice(),
-        GuessUserScreen.routeName: (context) => const GuessUserScreen(),
-        DrawUserScreen.routeName: (context) => const DrawUserScreen(),
+        MainChoice.routeName: (context) => MainChoice(context),
+        GuessUserScreen.routeName: (context) => GuessUserScreen(),
+        DrawUserScreen.routeName: (context) => DrawUserScreen(),
       },
 
       initialRoute: MainChoice.routeName,
