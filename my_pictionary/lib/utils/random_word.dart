@@ -1,20 +1,13 @@
-import 'package:flutter/material.dart';
-
 import 'dart:math';
 
-class RandomWord {
-  static final List<String> words = [
-    'apple',
-    'banana',
-    'cherry',
-    'orange',
-    'peach',
-    'pear',
-    'strawberry'
-  ];
+import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
-  static String generate() {
-    final random = Random();
-    return words[random.nextInt(words.length)];
+class RandomWord {
+  String getRandomWord() {
+    List<String> allWords = nouns;
+    int randomIndex = Random().nextInt(allWords.length);
+
+    return allWords[randomIndex];
   }
 }

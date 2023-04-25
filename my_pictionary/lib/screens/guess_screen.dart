@@ -3,7 +3,7 @@ import 'package:my_pictionary/responsive/responsive.dart';
 import 'package:my_pictionary/utils/color.dart';
 
 import 'package:provider/provider.dart';
-import '../resources/random_word.dart';
+import '../utils/random_word.dart';
 
 class GuessUserScreen extends StatefulWidget {
   static const routeName = './guess-user';
