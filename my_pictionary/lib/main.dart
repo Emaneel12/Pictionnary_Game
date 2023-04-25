@@ -34,7 +34,7 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:painter/painter.dart';
 
 void main() => runApp(MyApp());
@@ -104,6 +104,152 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 50,
           ),
         ],
+      ),
+    );
+  }
+}*/
+
+import 'package:flutter/material.dart';
+import 'package:painter/painter.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Painter Demo',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key});
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final PainterController _controller = PainterController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          // Free Space Rectangular
+          Container(
+            height: 50,
+          ),
+
+          // Color Palette Rectangular
+          Container(
+            height: 100,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  width: 80,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.blue,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.green,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.purple,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.yellow,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.orange,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.pink,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.grey,
+                ),
+                Container(
+                  width: 80,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ),
+
+          // Drawing Rectangular
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 1,
+                  color: Colors.grey[500]!,
+                ),
+              ),
+              child: Painter(
+                _controller,
+              ),
+            ),
+          ),
+
+          // Pencil and Eraser Rectangular
+          Container(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    _controller.drawMode = true;
+                    _controller.eraseMode = false;
+                  },
+                  icon: Icon(
+                    Icons.create,
+                    color: Colors.black,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    _controller.drawMode = false;
+                    _controller.eraseMode = true;
+                  },
+                  icon: Icon(
+                    Icons.crop_landscape,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      // Set the screen orientation to portrait
+      // This will force the app to always be in portrait mode
+      // regardless of the device orientation
+      // and make the last rectangular format not the format of the phone
+      // (assuming the phone is in landscape orientation)
+      appBar: AppBar(
+        title: Text('Painter Demo'),
+        centerTitle: true,
       ),
     );
   }
