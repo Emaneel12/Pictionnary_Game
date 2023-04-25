@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/responsive/responsive.dart';
 import 'package:my_pictionary/utils/color.dart';
-
+import 'package:my_pictionary/utils/guess_word.dart';
 import 'package:provider/provider.dart';
 import '../utils/random_word.dart';
 
@@ -18,10 +18,10 @@ class _GuessUserScreenState extends State<GuessUserScreen> {
   final TextEditingController _guessController = TextEditingController();
 
   void _submitGuessWord(BuildContext context) {
-    // final guessWord = Provider.of<GuessWord>(context, listen: false);
-    // final String drawingWord = RandomWord.;
+    final guessWord = Provider.of<GuessWord>(context, listen: false);
+    final String drawingWord = RandomWord.generate();
     final String guessedWord = _guessController.text;
-    // guessWord.submitGuessWord(context, guessedWord, drawingWord);
+    guessWord.submitGuessWord(context, guessedWord, drawingWord);
     _guessController.clear();
   }
 
