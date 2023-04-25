@@ -16,11 +16,25 @@ class _DrawUserScreenState extends State<DrawUserScreen> {
   //instance
   final RandomWord _randomWord = RandomWord();
   int _wordCount = 0;
+  String _currentWord = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _currentWord = _randomWord.getRandomWord() ?? '';
+    _randomWord.startTimer(onWordChanged: _onWordChanged);
+  }
+
+  void _onWordChanged(String newWord) {
+    setState(() {
+      _currentWord = newWord;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     //fct getRandomWord
-    final String randomWord = _randomWord.getRandomWord() ?? '';
+    //final String randomWord = _randomWord.getRandomWord() ?? '';
 
     if (_wordCount < 10) {
       _wordCount++;
@@ -31,7 +45,7 @@ class _DrawUserScreenState extends State<DrawUserScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Your word is: $randomWord',
+                  'Your word is: $_currentWord',
                   style: const TextStyle(fontSize: 24),
                 ),
               ],
@@ -52,5 +66,11 @@ class _DrawUserScreenState extends State<DrawUserScreen> {
         ),
       );
     }
+  }
+
+  @override
+  void dispose() {
+    _randomWord.stopTimer();
+    super.dispose();
   }
 }
