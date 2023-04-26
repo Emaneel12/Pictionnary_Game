@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/responsive/responsive.dart';
 import 'package:my_pictionary/utils/color.dart';
-import 'package:my_pictionary/utils/guess_word.dart';
+import 'package:my_pictionary/utils/compare_word.dart';
+import 'package:my_pictionary/utils/score.dart';
 import 'package:provider/provider.dart';
-import '../utils/random_word.dart';
 
 class GuessUserScreen extends StatefulWidget {
   static const routeName = './guess-user';
@@ -19,15 +19,17 @@ class _GuessUserScreenState extends State<GuessUserScreen> {
   bool _isCorrect = false;
 
   void _submitGuessWord(BuildContext context) {
-    final guessWord = Provider.of<CompaireWord>(context, listen: false);
-    // final String drawingWord = RandomWord.generate();
-    // final String guessedWord = _guessController.text;
-    // if (guessWord.submitGuessWord(context, guessedWord, drawingWord)) {
-    //   setState(() {
-    //     _isCorrect = true;
-    //   });
-    // }
-    // _guessController.clear();
+    final String guess = _guessController.text;
+    final CompareWord compareWord =
+        Provider.of<CompareWord>(context, listen: false);
+    final String currentWord = compareWord.currentWord;
+
+    if (compareWord.isEqualToDrawingWord(guess)) {
+      setState(() {
+        _isCorrect = true;
+      });
+      Provider.of<Score>(context, listen: false).increment();
+    }
   }
 
   @override

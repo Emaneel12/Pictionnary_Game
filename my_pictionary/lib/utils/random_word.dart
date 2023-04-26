@@ -12,7 +12,7 @@ class RandomWord extends ChangeNotifier {
 
   void startTimer({required Function(String) onWordChanged}) {
     _onWordChanged = onWordChanged;
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       _currentWord = getRandomWord();
       _onWordChanged?.call(_currentWord ?? '');
     });

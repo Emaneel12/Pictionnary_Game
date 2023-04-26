@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_pictionary/main.dart';
 import 'package:my_pictionary/responsive/responsive.dart';
 import 'package:my_pictionary/screens/main_choice.dart';
 import 'package:my_pictionary/utils/color.dart';
 
+import '../utils/compare_word.dart';
 import '../utils/random_word.dart';
 import '../widgets/costum_button.dart';
 
@@ -23,6 +23,7 @@ class DrawUserScreen extends StatefulWidget {
 class _DrawUserScreenState extends State<DrawUserScreen> {
   //instance
   final RandomWord _randomWord = RandomWord();
+  final CompareWord _compaireWord = CompareWord();
   int _wordCount = 0;
   String _currentWord = '';
 
@@ -30,6 +31,7 @@ class _DrawUserScreenState extends State<DrawUserScreen> {
   void initState() {
     super.initState();
     _currentWord = _randomWord.getRandomWord() ?? '';
+    _compaireWord.setCurrentWord(_currentWord);
     _randomWord.startTimer(onWordChanged: _onWordChanged);
   }
 
@@ -37,6 +39,7 @@ class _DrawUserScreenState extends State<DrawUserScreen> {
     setState(() {
       _currentWord = newWord;
       _wordCount++;
+      _compaireWord.setCurrentWord(_currentWord);
     });
   }
 
