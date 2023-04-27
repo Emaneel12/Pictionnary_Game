@@ -1,15 +1,24 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/screens/draw_screen.dart';
 import 'package:my_pictionary/screens/guess_screen.dart';
 
 import 'package:my_pictionary/screens/main_choice.dart';
+import 'package:my_pictionary/screens/main_room_choice.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'screens/create_room_screen.dart';
+import 'screens/join_room_screen.dart';
+
+void main() async {
+  // Initialize Firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  // Run the app
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
+  MyApp({
     super.key,
   });
 
@@ -26,12 +35,15 @@ class MyApp extends StatelessWidget {
       ),
       //route to other pages(widgets)
       routes: {
+        MainRoomChoice.routeName: (context) => const MainRoomChoice(),
+        JoinRoomScreen.routeName: (context) => const JoinRoomScreen(),
+        CreateRoomScreen.routeName: (context) => const CreateRoomScreen(),
         MainChoice.routeName: (context) => MainChoice(context),
         GuessUserScreen.routeName: (context) => GuessUserScreen(),
         DrawUserScreen.routeName: (context) => DrawUserScreen(),
       },
 
-      initialRoute: MainChoice.routeName,
+      initialRoute: MainRoomChoice.routeName,
     );
   }
 }
