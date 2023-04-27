@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_pictionary/resources/socket_methods.dart';
+
 import 'package:my_pictionary/widgets/custom_button.dart';
 import 'package:my_pictionary/widgets/custom_textfield.dart';
 
@@ -19,7 +19,7 @@ class _CreateRoomState extends State<CreateRoomScreen> {
   //instance of TextEditingController that controlls the text input in a text field widget. It allows you to read, write, and listen to changes in the text value of the text field.
   final TextEditingController _nameController = TextEditingController();
   //
-  final SocketMethods _socketMethods = SocketMethods();
+
   //preventing memory leaks and releasing any resources held by _nameController
   @override
   void dispose() {
@@ -63,15 +63,13 @@ class _CreateRoomState extends State<CreateRoomScreen> {
                   SizedBox(
                     height: size.height * 0.06,
                   ),
-                  CustomButton(
-                      onClick: () => _socketMethods.createRoom(
-                            _nameController.text,
-                          ),
-                      text: 'Create'),
+                  CustomButton(onClick: () => createRoom(), text: 'Create'),
                 ]),
           ),
         ),
       ),
     );
   }
+
+  createRoom() {}
 }

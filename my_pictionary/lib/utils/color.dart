@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_pictionary/main.dart';
 
 // gadient color of the background !!
 const bgGradientColor = LinearGradient(
