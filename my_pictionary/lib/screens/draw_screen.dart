@@ -5,7 +5,7 @@ import 'package:my_pictionary/utils/color.dart';
 
 import '../utils/compare_word.dart';
 import '../utils/random_word.dart';
-import '../widgets/costum_button.dart';
+import '../widgets/custom_button.dart';
 
 class DrawUserScreen extends StatefulWidget {
   static String routeName = './draw-user';

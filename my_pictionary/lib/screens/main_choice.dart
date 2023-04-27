@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/responsive/responsive.dart';
 import 'package:my_pictionary/utils/color.dart';
-import 'package:my_pictionary/widgets/costum_button.dart';
 
 import '../utils/game_play.dart';
+import '../widgets/custom_button.dart';
 
 class MainChoice extends StatelessWidget {
   static String routeName = './main-choice';

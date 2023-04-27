@@ -10,6 +10,7 @@ import '../utils/color.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
+
   const CreateRoomScreen({Key? key}) : super(key: key);
 
   @override
@@ -20,14 +21,13 @@ class _CreateRoomState extends State<CreateRoomScreen> {
   //instance of TextEditingController that controlls the text input in a text field widget. It allows you to read, write, and listen to changes in the text value of the text field.
   final TextEditingController _nameController = TextEditingController();
   //database
-  final database = FirebaseDatabase.instance.reference();
 
   //
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    final roomRef = database.child('room/');
+    // final roomRef = database.child('room/');
     return Scaffold(
       body: AppBackgroundColor(
         //widget responsive
@@ -61,15 +61,15 @@ class _CreateRoomState extends State<CreateRoomScreen> {
                   ),
                   CustomButton(
                       onClick: () async {
-                        try {
-                          await roomRef.set({
-                            'id': '1',
-                            'room Name': '$_nameController',
-                          });
-                          print('data written');
-                        } catch (e) {
-                          print('you got an error $e');
-                        }
+                        // try {
+                        //   await roomRef.set({
+                        //     'id': '1',
+                        //     'room Name': '$_nameController',
+                        //   });
+                        //   print('data written');
+                        // } catch (e) {
+                        //   print('you got an error $e');
+                        // }
                       },
                       text: 'Create'),
                 ]),

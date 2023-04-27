@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>681565152-bd5ip52crvk5smmjj2fdp1cam4p2ppf2.apps.googleusercontent.com</string>
+	<string>113987097633-0s0us30mk1cf75mjiujnk1g9qfi3th6u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.681565152-bd5ip52crvk5smmjj2fdp1cam4p2ppf2</string>
+	<string>com.googleusercontent.apps.113987097633-0s0us30mk1cf75mjiujnk1g9qfi3th6u</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBqVYLvdYakDphHQqAwSKxjgltAAxgtqi0</string>
+	<string>AIzaSyCmL692Oein8JZt5sreA6aFZgpwGCMIRlg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>681565152</string>
+	<string>113987097633</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.myPictionary</string>
 	<key>PROJECT_ID</key>
-	<string>my-pictionary</string>
+	<string>my-pictionary-1d6d3</string>
 	<key>STORAGE_BUCKET</key>
-	<string>my-pictionary.appspot.com</string>
+	<string>my-pictionary-1d6d3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:681565152:ios:ea9bdc4324ad7d3eeea985</string>
+	<string>1:113987097633:ios:73f0e31be58512bbf5ff60</string>
+	<key>DATABASE_URL</key>
+	<string>https://my-pictionary-1d6d3-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

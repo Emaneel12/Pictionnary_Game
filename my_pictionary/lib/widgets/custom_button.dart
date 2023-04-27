@@ -19,8 +19,8 @@ class CustomButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Color.fromARGB(
-                255, 179, 174, 192), // use indigo300 color from color.dart
-            blurRadius: 50,
+                255, 103, 71, 185), // use indigo300 color from color.dart
+            blurRadius: 80,
             offset: Offset(0, 10),
             spreadRadius: 0,
           )
@@ -29,8 +29,8 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onClick,
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(width, 70),
-        ),
+            minimumSize: Size(width, 70),
+            backgroundColor: Color.fromARGB(255, 228, 224, 235)),
         child: Text(
           text,
           style: const TextStyle(

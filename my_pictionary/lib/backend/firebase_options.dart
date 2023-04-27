@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBaYUZsxqlq1Haoi-OSHPxasTo3hzVmhes',
-    appId: '1:681565152:android:c8203015c08947c6eea985',
-    messagingSenderId: '681565152',
-    projectId: 'my-pictionary',
-    storageBucket: 'my-pictionary.appspot.com',
+    apiKey: 'AIzaSyA7CseJAjUhJ5HQ7VT9wrfCcNkBJieiLBE',
+    appId: '1:307387851073:android:3b5222072dc59d830501c0',
+    messagingSenderId: '307387851073',
+    projectId: 'pictionary-644cb',
+    storageBucket: 'pictionary-644cb.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBqVYLvdYakDphHQqAwSKxjgltAAxgtqi0',
-    appId: '1:681565152:ios:ea9bdc4324ad7d3eeea985',
-    messagingSenderId: '681565152',
-    projectId: 'my-pictionary',
-    storageBucket: 'my-pictionary.appspot.com',
-    iosClientId: '681565152-bd5ip52crvk5smmjj2fdp1cam4p2ppf2.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBLBkxLEdf6EwRmPSAAKY7NtqC5Dse_n2Q',
+    appId: '1:307387851073:ios:ccd62280352ac6a40501c0',
+    messagingSenderId: '307387851073',
+    projectId: 'pictionary-644cb',
+    storageBucket: 'pictionary-644cb.appspot.com',
+    iosClientId: '307387851073-ct33fc92pkadek3di9r8m7vghudo7emb.apps.googleusercontent.com',
     iosBundleId: 'com.example.myPictionary',
   );
 }

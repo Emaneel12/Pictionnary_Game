@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/responsive/responsive.dart';
 
@@ -9,7 +10,7 @@ import 'create_room_screen.dart';
 class MainRoomChoice extends StatelessWidget {
   //routes for after this page
   static String routeName = '/main-room-choice';
-  const MainRoomChoice({
+  MainRoomChoice({
     super.key,
   });
 // fonctions for the action of the onClick
@@ -51,6 +52,7 @@ class MainRoomChoice extends StatelessWidget {
                 onClick: () => joinRoom(context),
                 text: 'Join room',
               ),
+              CustomButton(onClick: () {}, text: '')
             ],
           ),
         ),
