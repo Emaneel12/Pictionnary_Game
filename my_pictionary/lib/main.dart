@@ -1,9 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_pictionary/screens/create_room_screen.dart';
 import 'package:my_pictionary/screens/join_room_screen.dart';
+import 'backend/firebase_options.dart';
 import 'screens/main_room_choice.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

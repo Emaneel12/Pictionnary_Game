@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "568124622352",
+    "project_id": "pictionary-database",
+    "storage_bucket": "pictionary-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568124622352:android:0e3f78065937ef747bac95",
+        "android_client_info": {
+          "package_name": "com.example.my_pictionary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568124622352-rgr651th6asgvuop95nsh079qt1hvicj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZi9VaSdxXI4DLacU_K_siBn8JtR5Eq2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568124622352-rgr651th6asgvuop95nsh079qt1hvicj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
